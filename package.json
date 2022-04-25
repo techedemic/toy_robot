@@ -4,12 +4,19 @@
   "description": "The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "test": "jest"
   },
   "keywords": [
     "Code",
     "Test"
   ],
   "author": "Hendri Schoeman <hendri@techedemic.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  }
 }
