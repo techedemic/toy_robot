@@ -33,6 +33,7 @@ export class Simulator {
 
     constructor(place: Place) {
         try {
+            // First validate that the placement is possible (throw error if not)
             this.validatePlaceCommand(place);
             this.place = place;
         } catch (error) {
@@ -40,10 +41,12 @@ export class Simulator {
         }
     }
 
+    // Feels unnecessary (could just reference the class property directly above, but wanted to implement method for readability)
     report = (): Place => {
         return this.place;
     };
 
+    // Move the robot 1 unit in direction it is pointing
     move = () => {
         if (this.isSafeMove) {
             switch (this.place.F) {
@@ -64,6 +67,8 @@ export class Simulator {
             return false; //Not safe to move, do nothing
         }
     };
+
+    // Change direction 90 degrees left or right.
     changeDirection = (direction: 'RIGHT' | 'LEFT') => {
         switch (this.place.F) {
             case DIRECTION.EAST:
@@ -82,7 +87,7 @@ export class Simulator {
     };
 
     // isSafeMove - Getter - Check if another move in current direction would result in 'destruction'
-    // true = safe to move forward
+    // if 'true' = safe to move forward
     private get isSafeMove(): boolean {
         switch (this.place.F) {
             case DIRECTION.EAST:
@@ -96,8 +101,19 @@ export class Simulator {
         }
     }
 
+    // Update place
+    updatePlace = (place: Place) => {
+        this.validatePlaceCommand(place);
+        this.place = place;
+    };
+
+    // Validate the coordinates / direction provided for the PLACE command.
     private validatePlaceCommand(place: Place) {
-        const { X, Y } = place;
+        const { X, Y, F } = place;
+
+        if (!Object.keys(DIRECTION).includes(F)) {
+            throw new Error(`Invalid direction ${F}`);
+        }
 
         if (X < 0 || X > 4) {
             throw new Error('Invalid X coordinate. Value must be from 0 to 4');
