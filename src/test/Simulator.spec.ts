@@ -54,9 +54,6 @@ describe('Additional full length test cases', () => {
     });
 
     it("Test case 'b'", () => {
-        /**
-         *
-         */
         const sim = new Simulator({ F: DIRECTION.NORTH, X: 0, Y: 0 });
         sim.changeDirection('LEFT');
         const output = sim.report();
