@@ -1,6 +1,7 @@
 import { DIRECTION, Simulator } from '../Simulator';
 
 /**
+ *     Test cases provided as part of challenge:
  *       a)
  *           PLACE 0,0,NORTH
  *           MOVE
