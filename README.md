@@ -55,11 +55,28 @@ There are 5 possible commands (All other commands are ignored and will print `In
 
 # HOW TO RUN:
 
-## Option 1: Run the unit tests
+## Setup
+
+### Clone repo:
+
+```bash
+git clone https://github.com/techedemic/toy_robot.git
+```
+
+### Install node packages:
+
+```bash
+cd toy_robot/
+npm install
+```
+
+## Run
+
+### Option 1: Run the unit tests
 
 -   `npm run test` - Multiple tests (positive and negative) are included
 
-## Option 2: Run from file
+### Option 2: Run from file
 
 -   Input commands in `input_commands.txt` file (example file provided)
 -   Run application using
