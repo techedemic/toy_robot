@@ -47,7 +47,6 @@ There are 5 possible commands (All other commands are ignored and will print `In
 
 # ASSUMPTIONS
 
--   Once `REPORT` has been called, the current cycle ends. The first accepted command after this will only be a `PLACE` command
 -   Input's will be valid, i.e. no letters for coordinates `X,Y` or non-existant directions for `F`
 -   Input file will always be named `input_commands.txt`
 -   Typos (invisible spaces, special characters, etc) will be ignored. Example, `'LEFT'` does not equal `'LEFT '`
