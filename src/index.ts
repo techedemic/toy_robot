@@ -1,4 +1,4 @@
-import { DIRECTION, Place, Simulator } from './Simulator';
+import { Simulator } from './Simulator';
 import { readFileSync } from 'fs';
 import { executeCommand, returnFormattedPlace } from './helpers';
 
