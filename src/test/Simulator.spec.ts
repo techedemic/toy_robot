@@ -38,7 +38,7 @@ describe('Test cases as provided in Challenge Document', () => {
     });
 });
 
-describe('Additional full length test cases', () => {
+describe('Additional full length test case', () => {
     it('Test case implementing all methods', () => {
         const sim = new Simulator({ F: DIRECTION.SOUTH, X: 0, Y: 0 });
         sim.changeDirection('LEFT');
@@ -52,16 +52,6 @@ describe('Additional full length test cases', () => {
         expect(output.F).toEqual(DIRECTION.EAST);
         expect(output.X).toEqual(1);
         expect(output.Y).toEqual(2);
-    });
-
-    it("Test case 'b'", () => {
-        const sim = new Simulator({ F: DIRECTION.NORTH, X: 0, Y: 0 });
-        sim.changeDirection('LEFT');
-        const output = sim.report();
-
-        expect(output.F).toEqual(DIRECTION.WEST);
-        expect(output.X).toEqual(0);
-        expect(output.Y).toEqual(0);
     });
 });
 
